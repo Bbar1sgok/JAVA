@@ -41,15 +41,23 @@ public class Main {
             // DIVISION
             case 4:
                 if (inputNumber2 != 0) {
-                    System.out.println("The division of the entered numbers: " + (inputNumber1 / inputNumber2));
-                } else if (inputNumber1 == 0 && inputNumber2 == 0) {
+                    
+                    System.out.println("The division of the entered numbers: " + (inputNumber1 / inputNumber2)); 
+                } 
+                
+                else if (inputNumber1 == 0 && inputNumber2 == 0) {
+                    
                     System.out.println("The division of zero by zero is indeterminate.");
-                } else {
-                    System.out.println("The division of a non-zero number by zero is undefined.");
+                } 
+                
+                else {
+                   
+                    System.out.println("The division of a non-zero number by zero is undefined.");  
                 }
                 break;
 
             default:
+                
                 System.out.println("No valid operation selected...");
                 break;
         }
