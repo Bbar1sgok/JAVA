@@ -8,7 +8,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        float result, inputNumber1, inputNumber2;
+        float inputNumber1, inputNumber2;
         int operation;
 
         System.out.println("Please enter the first number: ");
