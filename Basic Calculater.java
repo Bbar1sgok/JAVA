@@ -51,6 +51,7 @@ public class Main {
 
             default:
                 System.out.println("No valid operation selected...");
+                break;
         }
 
         scanner.close();
