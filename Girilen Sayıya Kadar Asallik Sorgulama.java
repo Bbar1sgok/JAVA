@@ -14,6 +14,7 @@ public class AsalSorgulama {
             }
 
         }
+        
         return true;
     }
 
@@ -73,6 +74,7 @@ public class AsalSorgulama {
 
 
         }
+        
         scanner.close();
     }
 }
