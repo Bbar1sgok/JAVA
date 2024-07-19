@@ -1,51 +1,193 @@
-import java.util.Scanner;
+public class Idman {
 
-public class Main {
-    public static void main(String[] args) {
+    private int burpee_sayisi;
+    private int pushup_sayisi;
+    private int situp_sayisi;
+    private int squat_sayisi;
 
-        Scanner scanner = new Scanner(System.in);
+    public Idman(int burpee_sayisi, int pushup_sayisi, int situp_sayisi, int squat_sayisi){
 
-        System.out.println("Idman programına hoşgeldiniz...");
+        this.burpee_sayisi = burpee_sayisi;
+        this.pushup_sayisi = pushup_sayisi;
+        this.situp_sayisi = situp_sayisi;
+        this.squat_sayisi = squat_sayisi;
 
-        String idmanlar = "Geçerli Hareketler...\n" +
-                "Burpee\n" +
-                "Pushup(Şınav)\n" +
-                "Situp(Mekik)\n" +
-                "Squat";
+    }
 
-        System.out.println(idmanlar);
+    public void setBurpee_sayisi(int burpee_sayisi) {
 
-        System.out.println("Bir idman oluşturun...");
+        this.burpee_sayisi = burpee_sayisi;
 
-        System.out.println("Burpee sayısı giriniz:");
-        int burpee = scanner.nextInt();
-        System.out.println("Pushup sayısı giriniz:");
-        int pushup = scanner.nextInt();
-        System.out.println("Situp sayısı giriniz:");
-        int situp = scanner.nextInt();
-        System.out.println("Squat sayısı giriniz:");
-        int squat = scanner.nextInt();
-        scanner.nextLine();
+    }
 
-        Idman idman = new Idman(burpee,pushup,situp,squat);
+    public int getBurpee_sayisi() {
 
-        System.out.println("Idmanınız başlıyor...");
+        return burpee_sayisi;
 
-        while(idman.idmanBittiMi() == false){
+    }
 
-            System.out.println("Hareket Türü (Burpee, Pushup, Situp, Squat):");
-            String tur = scanner.nextLine();
+    public void setPushup_sayisi(int pushup_sayisi) {
 
-            System.out.println("Bu hareketten kaç tane yapıcaksınız ? :");
-            int sayi = scanner.nextInt();
-            scanner.nextLine();
-            idman.hareketYap(tur,sayi);
+        this.pushup_sayisi = pushup_sayisi;
 
+    }
+
+    public int getPushup_sayisi() {
+
+        return pushup_sayisi;
+
+    }
+
+    public void setSitup_sayisi(int situp_sayisi) {
+
+        this.situp_sayisi = situp_sayisi;
+
+    }
+
+    public int getSitup_sayisi() {
+
+        return situp_sayisi;
+
+    }
+
+    public void setSquat_sayisi(int squat_sayisi) {
+
+        this.squat_sayisi = squat_sayisi;
+
+    }
+
+    public int getSquat_sayisi() {
+
+        return squat_sayisi;
+
+    }
+
+    public void hareketYap(String hareketTuru, int sayi){
+
+        if(hareketTuru.equalsIgnoreCase("Burpee")){
+
+            burpeeYap(sayi);
+
+        }
+        else if( hareketTuru.equalsIgnoreCase("Pushup")){
+
+            pushupYap(sayi);
+
+        }
+        else if( hareketTuru.equalsIgnoreCase("Situp")){
+
+            situpYap(sayi);
+
+        }
+        else if( hareketTuru.equalsIgnoreCase("Squat")){
+
+            squatYap(sayi);
+
+        }
+        else{
+
+            System.out.println("Gecersiz hareket...");
 
         }
 
-        System.out.println("Idmanını başarıyla bitirdin.");
-      
-      scanner.close();
     }
+
+    public void burpeeYap(int sayi){
+
+        if(burpee_sayisi == 0){
+
+            System.out.println("Yapacak Burpee kalmadı");
+
+        }
+        if (burpee_sayisi - sayi < 0){
+
+            System.out.println("Hedeflediğin burpee sayısını geçtin tebrikler!");
+            burpee_sayisi = 0;
+            System.out.println("Kalan Burpee: " + burpee_sayisi);
+
+        }
+        else{
+
+            burpee_sayisi -= sayi;
+            System.out.println("Kalan Burpee sayısı: " + burpee_sayisi);
+
+        }
+
+    }
+
+    public void pushupYap(int sayi){
+
+        if(pushup_sayisi == 0){
+
+            System.out.println("Yapacak Pushup kalmadı");
+
+        }
+        if (pushup_sayisi - sayi < 0){
+
+            System.out.println("Hedeflediğin Pushup sayısını geçtin tebrikler!");
+            pushup_sayisi = 0;
+            System.out.println("Kalan Pushup: " + pushup_sayisi);
+
+        }
+        else{
+
+            pushup_sayisi -= sayi;
+            System.out.println("Kalan Burpee sayısı: " + pushup_sayisi);
+
+        }
+
+    }
+
+    public void situpYap(int sayi){
+
+        if(situp_sayisi == 0){
+
+            System.out.println("Yapacak Situp kalmadı");
+
+        }
+        if (situp_sayisi - sayi < 0){
+
+            System.out.println("Hedeflediğin Situp sayısını geçtin tebrikler!");
+            situp_sayisi = 0;
+            System.out.println("Kalan Situp: " + situp_sayisi);
+
+        }
+        else{
+
+            situp_sayisi -= sayi;
+            System.out.println("Kalan Situp sayısı: " + situp_sayisi);
+
+        }
+
+    }
+
+    public void squatYap(int sayi){
+
+        if(squat_sayisi == 0){
+
+            System.out.println("Yapacak Squat kalmadı");
+
+        }
+        if (squat_sayisi - sayi < 0){
+
+            System.out.println("Hedeflediğin Squat sayısını geçtin tebrikler!");
+            squat_sayisi = 0;
+            System.out.println("Kalan Squat: " + squat_sayisi);
+
+        }
+        else{
+
+            squat_sayisi -= sayi;
+            System.out.println("Kalan Squat sayısı: " + squat_sayisi);
+
+        }
+
+    }
+
+    public boolean idmanBittiMi(){
+
+        return(burpee_sayisi == 0) && (pushup_sayisi == 0) && (situp_sayisi == 0) && (squat_sayisi == 0);
+
+    }
+
 }
