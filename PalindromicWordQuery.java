@@ -11,12 +11,8 @@ public class Main {
         // Close the scanner to free up resources
         scanner.close();
 
-        // StringBuilder is used to manipulate strings
-        // The input word is passed to the StringBuilder constructor to create an instance
+        // Reverse the word with StringBuilder
         StringBuilder sb = new StringBuilder(inputWord);
-        
-        // reverse() method of StringBuilder reverses the string
-        // toString() method converts the reversed sequence back into a String
         String reverseWord = sb.reverse().toString();
 
         // equalsIgnoreCase checks if the original word and reversed word are the same, ignoring case
