@@ -24,6 +24,6 @@ public class Main {
             max = number3;
         }
 
-        System.out.println("The maximum number is: " + max);
+        System.out.println("The maximum number : " + max);
     }
 }
