@@ -44,7 +44,7 @@ public class Main {
 
         }
 
-        System.out.println("Idmanını başarıyla bitirdin.");
+        System.out.println("Idmanını başarıyla bitirdin...");
 
     }
 }
